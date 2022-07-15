@@ -15,17 +15,10 @@
 //        ticks: int
 //      }
 // 5. append to master flat array of `song`
-var LeetSheet = /** @class */ (function () {
-    function LeetSheet() {
-    }
-    return LeetSheet;
-}());
+
 var parseSheet = function (txt) {
-    return {
-        title: "Purple Rain",
-        artist: "Prince",
-        key: "Bb",
-        tempo: 80
-    };
+    console.log(txt)
+    return 'asdf'
 };
-module.exports = { parse: parseSheet };
+
+export { parseSheet as parse }
