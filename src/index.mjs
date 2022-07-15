@@ -1,4 +1,7 @@
 "use strict";
+
+import {ifError} from "assert";
+
 // todo
 // 0. get a leetsheet string
 // 0a. validate it
@@ -16,8 +19,26 @@
 //      }
 // 5. append to master flat array of `song`
 
-var parseSheet = function (txt) {
-    console.log(txt)
+const rgx = {
+    frontmatter: /^\-\-\-\n(.*)\-\-\-$/ms,
+    individualFM: /^(\w+)\:\s(.*)$/gm
+};
+
+const getFrontmatter = function(sheet) {
+    var m = sheet.match(rgx.frontmatter);
+    if ( m ) {
+        return m[1]
+    } else {
+        console.error('no frontmatter');
+    }
+}
+
+const fmToJson = function(fmStr) {
+    // take the front matter and make key/values
+}
+
+const parseSheet = function (sheet) {
+    console.log(getFrontmatter(sheet))
     return 'asdf'
 };
 

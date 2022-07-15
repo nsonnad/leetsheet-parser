@@ -1,8 +1,8 @@
 ---
-title: "Purple Rain"
-artist: "Prince"
+title: Purple Rain
+artist: Prince
 tempo: 80
-time: "4/4"
+time: 4/4
 ---
 
 ## structure
