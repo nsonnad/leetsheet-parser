@@ -13,5 +13,8 @@
     "require": [
       "esm"
     ]
+  },
+  "dependencies": {
+    "front-matter": "^4.0.2"
   }
 }

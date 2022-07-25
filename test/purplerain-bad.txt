@@ -1,0 +1,34 @@
+---
+title Purple Rain
+artist- Prince
+tempo::: 80
+time = 4/4
+---
+
+## structure
+
+- [ intro, 1 ]
+- [ verse, 2 ]
+- [ prechorus, 1 ]
+- [ chorus, 1 ]
+- [ verse, 2 ]
+- [ prechorus, 1 ]
+- [ chorus, 1 ]
+
+## sections
+
+- intro
+
+| Bb | Gm7 | F | Eb |
+
+- verse
+
+| Bb | Gm7 | F | Eb |
+
+- prechorus
+
+| Bb(8) - |
+
+- chorus
+
+| Eb | Bb | Gm7 | F | F7 |

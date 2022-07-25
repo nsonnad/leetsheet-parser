@@ -5,30 +5,32 @@ tempo: 80
 time: 4/4
 ---
 
-## structure
+## arrangement
 
-- [ intro, 1 ]
-- [ verse, 2 ]
-- [ prechorus, 1 ]
-- [ chorus, 1 ]
-- [ verse, 2 ]
-- [ prechorus, 1 ]
-- [ chorus, 1 ]
+- intro
+- verse
+- verse
+- prechorus
+- chorus
+- verse
+- verse
+- prechorus
+- chorus
 
 ## sections
 
-- intro
+intro: >
 
-| Bb | Gm7 | F | Eb |
+  | Bb | Gm7 | F | Eb |
 
-- verse
+verse: >
 
-| Bb | Gm7 | F | Eb |
+  | Bb | Gm7 | F | Eb |
 
-- prechorus
+prechorus: >
 
-| Bb(8) - |
+  | Bb(8) - |
 
-- chorus
+chorus: >
 
-| Eb | Bb | Gm7 | F | F7 |
+  | Eb | Bb | Gm7 | F | F7 |
