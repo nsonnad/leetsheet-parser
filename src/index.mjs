@@ -1,6 +1,7 @@
 "use strict";
 import fm from 'front-matter';
 import yaml from 'js-yaml';
+import { parseProgression } from './parseProgression'
 
 // todo
 // 0. get a leetsheet string X
@@ -48,37 +49,19 @@ const getArrangement = function (sheet) {
 const getSections = function (sheet) {
     let m = sheet.match(rgx.sections);
     if (m) {
-        console.log(m)
         let sections = yaml.load(m[0]);
         return sections;
     } else {
         console.error('no sections found');
     }
-
-}
-
-const progressionToMeasures = function(progression) {
-    return progression
-        .replace(/\n/g, "")
-        .replace(/\s\|/g, "|")
-        .replace(/\|\s/g, "|")
-        .split("|")
-        .filter(x => x);
-}
-
-const processChordProgression = function(section) {
-    let measures = progressionToMeasures(section);
-    console.log(measures)
 }
 
 const makeSong = function (sheet) {
     let sections = getSections(sheet)
-    Object.keys(sections).reduce(function(arr, k) {
-        return [
-            ...arr,
-            processChordProgression(sections[k])
-        ]
-    }, [])
+    Object.keys(sections).reduce(function(obj, k) {
+        obj[k] = parseProgression(sections[k])
+        return obj;
+    }, {})
     return "";
 }
 
@@ -92,10 +75,7 @@ const parseSheet = function (sheet) {
         arrangement: arrangement,
         song: song
     };
-    console.log(ls)
     return ls;
-    //let ls = fmToJson(fm);
-    //return ls;
 };
 
 export { parseSheet as parse }

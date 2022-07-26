@@ -1,6 +1,7 @@
 import test from 'tape';
 import fs from 'fs';
 import { parse } from '../src';
+import { parseProgression } from '../src/parseProgression.mjs'
 
 const expectedLS = {
   title: "Purple Rain",
@@ -14,7 +15,7 @@ test('get frontmatter', (t) => {
 
   fs.readFile('./test/purplerain.txt', 'utf8', (err, txt) => {
     if (err) console.error(err);
-    t.deepEqual(parse(txt), expectedLS);
+    t.deepEqual(parse(txt).meta, expectedLS);
   });
 
 })
@@ -29,3 +30,12 @@ test('get frontmatter', (t) => {
 
 //})
 
+const prog1 = '\n| Eb | Bb | Gm7 | F | F7 |\n';
+const prog2 = '\n| Bb(8) - |\n';
+
+test('chords successfully parsed into `song` structure', (t) => {
+  t.plan(1);
+  let parsed = parseProgression(prog1);
+  console.log(parsed)
+
+})
